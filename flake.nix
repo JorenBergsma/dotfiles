@@ -3,12 +3,15 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
-    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
 
     # Home manager
-    home-manager.url = "github:nix-community/home-manager/release-23.05";
+    home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    #nix-gaming
+    nix-gaming.url = "github:fufexan/nix-gaming";
 
     # TODO: Add any other flake you might need
     # hardware.url = "github:nixos/nixos-hardware";
@@ -34,9 +37,6 @@
 
         # > Our main nixos configuration file <
         modules = [./nixos/configuration.nix];
-
-        # Your custom packages and modifications, exported as overlays
-        overlays = import ./overlays {inherit inputs;};
       };
     };
 

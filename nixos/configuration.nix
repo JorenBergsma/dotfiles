@@ -14,11 +14,11 @@
     # inputs.hardware.nixosModules.common-ssd
 
     # You can also split up your configuration and import pieces of it here:
-    # ./users.nix
+    ./system-packages.nix
+    ./driver-specialisation.nix
 
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
-    ./system-packages.nix
   ];
 
   nixpkgs = {
@@ -73,6 +73,13 @@
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Enable OpenGL
+  hardware.opengl = {
+    enable = true;
+    driSupport = true;
+    driSupport32Bit = true;
+  };
+
   # Set your time zone.
   time.timeZone = "Europe/Amsterdam";
 
@@ -96,7 +103,7 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.xserver.displayManager.sddm.wayland.enable = true;
-  services.xserver.desktopManager.plasma6.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Configure keymap in X11
   services.xserver.xkb = {
