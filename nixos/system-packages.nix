@@ -20,10 +20,10 @@
 
     #Games
     steam
-    runelite
     osu-lazer-bin
     inputs.nix-gaming.packages.${pkgs.system}.osu-stable
     r2modman
+    stable.runelite
 
     #Creative
     godot_4

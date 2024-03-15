@@ -5,16 +5,9 @@
   ...
 }: {
   specialisation = {
-    mesa.configuration = {
-      environment.systemPackages = with pkgs; [
-        mesa
-      ];
-    };
-
     nvidia.configuration = {
       # Load nvidia driver for Xorg and Wayland
       services.xserver.videoDrivers = ["nvidia"]; # or "nvidiaLegacy470 etc.
-
       hardware.nvidia = {
 
         # Modesetting is required.
@@ -44,7 +37,7 @@
         nvidiaSettings = true;
 
         # Optionally, you may need to select the appropriate driver version for your specific GPU.
-        package = config.boot.kernelPackages.nvidiaPackages.stable;
+        package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
       };
     };
   };
