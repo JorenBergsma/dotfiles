@@ -9,16 +9,18 @@
   ...
 }: {
   # You can import other home-manager modules here
-  imports = [
-    # If you want to use home-manager modules from other flakes (such as nix-colors):
-    inputs.nix-colors.homeManagerModule
-    
+  imports = [    
     # You can also split up your configuration and import pieces of it here:
+    ./features/Themes.nix
     ./features/Hyprland.nix
 		./features/Bash.nix
 		./features/Kitty.nix
 		./features/Micro.nix
 		./features/Firefox.nix
+		./features/Fastfetch.nix
+		./features/Btop.nix
+		./features/Vesktop.nix
+		./features/Wofi.nix
   ];
 
   nixpkgs = {
@@ -51,9 +53,6 @@
   # Enable home-manager and git
   programs.home-manager.enable = true;
   programs.git.enable = true;
-
-	# Set nix colors colorscheme
-  colorscheme = inputs.nix-colors.colorSchemes.kanagawa;
   
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";

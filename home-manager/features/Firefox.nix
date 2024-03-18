@@ -4,7 +4,7 @@
 	config,
 	...
 }: {
-	config = with config.colorScheme.colors; {
+	config =  {
 		programs.firefox = {
 			enable = true;
 			profiles.gelei = {
@@ -40,14 +40,18 @@
 				  }
 				];
 			
-				settings = {
+				settings = with config.colorScheme.colors; {
 					"browser.search.widget.inNavBar" = false;
 					"services.sync.prefs.sync.browser.urlbar.showSearchSuggestionsFirst" = false;
 					"browser.toolbars.bookmarks.visibility" = "never";
+
+					# Colorscheme
+					
 				};
 
 				extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
 					bitwarden
+					firefox-color
 				];
 
 				userChrome = ''

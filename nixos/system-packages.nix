@@ -8,13 +8,15 @@
     xdg-desktop-portal-gtk
     
     #Terminal
-    kitty
+    kitty starship
 
     # File manager
     yazi fzf
 
     # Text editor
     micro
+
+    wofi
 
     # Menu bar
     waybar
@@ -38,10 +40,11 @@
     btop
     udisks
     jq
+    fastfetch
 
     #Utility
     opentabletdriver
-    vesktop
+    vesktop discocss
     firefox
 
     #Games
@@ -58,5 +61,5 @@
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "CommitMono" ]; })
   ];
-  
+
 }

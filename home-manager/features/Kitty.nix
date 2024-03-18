@@ -48,6 +48,9 @@
 			mark3_foreground = "#${base00}";
 			mark3_background = "#${base0C}";
 
+			# Add padding
+			window_padding_width = 2;
+
 			# The 16 terminal colors
 			# Black
 			color0 = 	"#5C5F77";

@@ -13,17 +13,17 @@
 			
 			${pkgs.kitty}/bin/kitty yazi
 		'';
-	in
-	{
+in
+{
 	wayland.windowManager.hyprland = {
 		enable = true;
 		
 		settings = {
 			exec-once = "${startupScript}/bin/start";	
 			monitor = [
-				"HDMI-A-1,																		highres,	0x0,		1"
-				"desc:Lenovo Group Limited G27q-20 U6330RM1,	highrr,		1920x0,	1"
-				"desc:Lenovo Group Limited P27h-30 V30A4WKZ,	highres,	4480x0,	1"
+				"HDMI-A-1,																		highres,	0x0,		1, transform,1"
+				"desc:Lenovo Group Limited G27q-20 U6330RM1,	highrr,		1080x0,	1"
+				"desc:Lenovo Group Limited P27h-30 V30A4WKZ,	highres,	3640x0,	1"
 			];
 
 			# Set programs that you use
@@ -134,9 +134,13 @@
 			# See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
 			windowrulev2 = [
 				"suppressevent maximize, class:.*" # Youll probably like this.
-				"minsize[1803][1006],class:(net-runelite-client-RuneLite)"
-				"maxsize[1803][1006],class:(net-runelite-client-RuneLite)"
-				"keepaspectratio,class:(net-runelite-client-RuneLite)"
+				"minsize[1803][1006],class:^(net-runelite-client-RuneLite)$"
+				"maxsize[1803][1006],class:^(net-runelite-client-RuneLite$)"
+				"keepaspectratio,class:^(net-runelite-client-RuneLite)$"
+
+				# These should never have opacity
+				"opacity 1.0 override,class:^(net-runelite-client-RuneLite)$"
+				"opacity 1.0 override,class:^(firefox)$"
 			];
 			
 			"$mainMod" = "SUPER";
@@ -196,7 +200,7 @@
 				"$mainMod, mouse_up, workspace, e-1"
 
 				# Rofi launcher
-				"$mainMod, S, exec, rofi -show drun -show-icons"
+				"$mainMod, S, exec, ${pkgs.wofi}/bin/wofi"
 
 				# Rectangle screenshot
 				"ALT SHIFT, S, exec, IMG=~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).png && grim -g \"$(slurp -w 0)\" $IMG && wl-copy < $IMG"
