@@ -123,6 +123,12 @@
     jack.enable = true;
   };
 
+  # Enable remote destop
+  services.xrdp = {
+  	enable = true;
+  	
+  };
+
   # Enable Steam
   programs.steam.enable = true;
 

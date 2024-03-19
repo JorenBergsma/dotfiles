@@ -9,7 +9,7 @@
 			${pkgs.waybar}/bin/waybar &
 			
 			${pkgs.swww}/bin/swww init &
-			${pkgs.swww}/bin/swww img ${./wallpaper.png} &
+			${pkgs.swww}/bin/swww img "&{../Wallpaper.png}" &
 			
 			${pkgs.kitty}/bin/kitty yazi
 		'';
@@ -58,8 +58,7 @@ in
 			  gaps_in = 10;
 			  gaps_out = 20;
 			  border_size = 3;
-			  "col.active_border" = "rgba(${base0D}ff) rgba(${base0C}ff) 45deg";
-			  "col.inactive_border" = "rgba(${base00}ff)";
+			  "col.active_border" = lib.mkForce "rgba(${base0A}ff) rgba(${base08}ff) 45deg";
 			
 			  layout = "dwindle";
 			
@@ -79,7 +78,7 @@ in
 			  drop_shadow = "yes";
 			  shadow_range = 4;
 			  shadow_render_power = 3;
-			  "col.shadow" = "rgba(${base01}ee)";
+			  #"col.shadow" = "rgba(${base01}ee)";
 			};
 
 			animations = {

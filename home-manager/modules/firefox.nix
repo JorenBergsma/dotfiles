@@ -54,19 +54,19 @@
 					firefox-color
 				];
 
-				userChrome = ''
-					${builtins.readFile(builtins.fetchurl {
-						url = "https://raw.githubusercontent.com/Haruzona/penguinFox/main/files/chrome/userChrome.css";
-						sha256 = "1jk9w9c3jfi03hswz007nn3ykgmq2dn2dib8a6ravw1vacr37j7g";
-					})}
-				'';
+				#userChrome = ''
+				#	${builtins.readFile(builtins.fetchurl {
+				#		url = "https://raw.githubusercontent.com/Haruzona/penguinFox/main/files/chrome/userChrome.css";
+				#		sha256 = "1jk9w9c3jfi03hswz007nn3ykgmq2dn2dib8a6ravw1vacr37j7g";
+				#	})}
+				#'';
 
-				userContent = ''
-					${builtins.readFile(builtins.fetchurl {
-						url = "https://raw.githubusercontent.com/Haruzona/penguinFox/main/files/chrome/userContent.css";
-						sha256 = "0aay2llxbfxm3clrjii21rzqm7nmqc3hja1gr4z8ifn8vpcg8270";
-					})}
-				'';
+				#userContent = ''
+				#	${builtins.readFile(builtins.fetchurl {
+				#		url = "https://raw.githubusercontent.com/Haruzona/penguinFox/main/files/chrome/userContent.css";
+				#		sha256 = "0aay2llxbfxm3clrjii21rzqm7nmqc3hja1gr4z8ifn8vpcg8270";
+				#	})}
+				#'';
 			};
 		};
 	};

@@ -6,12 +6,16 @@
   environment.systemPackages = with pkgs; [
     xdg-desktop-portal
     xdg-desktop-portal-gtk
+
+    hackneyed
+    gpu-screen-recorder
+    remmina
     
     #Terminal
     kitty starship
 
     # File manager
-    yazi fzf
+    yazi fzf unar mpv exiftool mediainfo
 
     # Text editor
     micro

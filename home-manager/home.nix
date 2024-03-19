@@ -9,18 +9,20 @@
   ...
 }: {
   # You can import other home-manager modules here
-  imports = [    
+  imports = [
     # You can also split up your configuration and import pieces of it here:
-    ./features/Themes.nix
-    ./features/Hyprland.nix
-		./features/Bash.nix
-		./features/Kitty.nix
-		./features/Micro.nix
-		./features/Firefox.nix
-		./features/Fastfetch.nix
-		./features/Btop.nix
-		./features/Vesktop.nix
-		./features/Wofi.nix
+    ./theme.nix
+    
+    ./modules/hyprland.nix
+		./modules/shell.nix
+		./modules/kitty.nix
+		./modules/micro.nix
+		./modules/firefox.nix
+		./modules/fastfetch.nix
+		./modules/btop.nix
+		./modules/vesktop.nix
+		./modules/wofi.nix
+		./modules/yazi.nix
   ];
 
   nixpkgs = {

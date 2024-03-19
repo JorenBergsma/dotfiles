@@ -39,9 +39,9 @@
 			    --background-tertiary: var(--base00);
 			    --background-accent: var(--base0E);
 			    --background-floating: var(--base01);
-			    --background-modifier-selected: var(--base00);
+			    --background-modifier-selected: var(--base04);
 			    --text-normal: var(--base05);
-			    --text-secondary: var(--base00);
+			    --text-secondary: var(--base04);
 			    --text-muted: var(--base03);
 			    --text-link: var(--base0C);
 			    --interactive-normal: var(--base05);
@@ -49,7 +49,7 @@
 			    --interactive-active: var(--base0A);
 			    --interactive-muted: var(--base00);
 			    --header-primary: var(--base06);
-			    --header-secondary: var(--base00);
+			    --header-secondary: var(--base04);
 			    --scrollbar-thin-track: transparent;
 			    --scrollbar-auto-track: transparent;
 			}
